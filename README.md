@@ -22,9 +22,6 @@ In order to run the notebooks you will need to have `imageio`. This is not a dep
 # you will need to install imageio
 pip install imageio
 
-# you will need pynwb to work with one of the datasets
-pip install pynwb
-
 # optional, you'll need C compilers
 pip install simplejpeg
 
