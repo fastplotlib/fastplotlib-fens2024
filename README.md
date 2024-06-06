@@ -33,7 +33,23 @@ pip install pynapple
 ```
 
 # General `fastplotlib` API
-TODO // Insert nice graphic/flow chart showing how everything fits together
+
+### 1. Graphics - objects that are drawn
+- `Image`, `Line`, `Scatter`
+- Collections - `LineCollection`, `LineStack` (ex: neural timeseries data)
+    #### a) Graphic Features
+  - Common: `Name`, `Offset`, `Rotation`, `Visible`, `Deleted`
+  - Graphic Specific: `ImageVmin`, `ImageVmax`, `VertexColors`, etc.
+  #### b) Selectors
+  - `LinearSelector` - horizontal or vertical line slider 
+  - `LinearRegionSelector` - horizontal or vertical resizable region selection
+
+### 2. Layouts
+- `Figure` - a single plot or a grid of subplots 
+
+### 3. Widgets - high level widgets to make repetitive UIs easier
+- `ImageWidget`- widget for `Image` data with dims: `xy`, `txy`, `tzxy`
+- Sliders, support window functions, etc.
 
 # Docs
 For a more in-depth look at our API, please visit our [docs](http://fastplotlib.readthedocs.io/).
