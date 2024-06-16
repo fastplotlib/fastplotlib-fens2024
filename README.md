@@ -1,12 +1,13 @@
 # fastplotlib-fens2024
 
-Materials for the [`fastplotlib`](https://github.com/fastplotlib/fastplotlib/) talk at FENS Forum 2024. This repo includes installation instructions and the demo notebooks covered in our talk.
+Materials for the [`fastplotlib`](https://github.com/fastplotlib/fastplotlib/) talk at FENS Forum 2024. This repo includes installation instructions and the demo notebooks covered in our talk. These demos can downloaded and ran locally, but the official built site for the workshop can be found [here](https://flatironinstitute.github.io/ccn-software-fens-2024/)
 
 For more info on `fastplotlib` see the repo: https://github.com/fastplotlib/fastplotlib/
 
 The demos cover the following topics:
-1. Simple introduction to `fastplotlib` - `Images`, `ImageWidget`, and `Lines`
+1. Simple introduction to `fastplotlib` - `Images`, `Lines`, and events
    - plotting simple images, feature changes, image updates, fancy indexing of features
+   - **included exercises**
 2. Neuroscience using `fastplotlib` 
    - building a complex plot to explore behavioral and calcium imaging data
    - integration of `fastplotlib` with `pynapple`
@@ -15,12 +16,15 @@ The demos cover the following topics:
 
 See the `fastplotlib` repo for [installation](https://github.com/kushalkolar/fastplotlib#installation). 
 
-In order to run the notebooks you will need to have `imageio`. This is not a dependency of `fastplotlib`, but is being used in these demos.
+In order to run the notebooks you will need to have `imageio` and `scikit-image`. These are not dependencies of `fastplotlib`, but are being used in these demos.
 
 ### Install using pip
 ```
 # you will need to install imageio
 pip install imageio
+
+# you will need to install scikit-image
+pip install scikit-image
 
 # optional, you'll need C compilers
 pip install simplejpeg
@@ -37,18 +41,20 @@ pip install pynapple
 ### 1. Graphics - objects that are drawn
 - `Image`, `Line`, `Scatter`
 - Collections - `LineCollection`, `LineStack` (ex: neural timeseries data)
-    #### a) Graphic Features
+
+    #### a) Graphic Properties
   - Common: `Name`, `Offset`, `Rotation`, `Visible`, `Deleted`
   - Graphic Specific: `ImageVmin`, `ImageVmax`, `VertexColors`, etc.
+
   #### b) Selectors
-  - `LinearSelector` - horizontal or vertical line slider 
+  - `LinearSelector` - horizontal or vertical line slider
   - `LinearRegionSelector` - horizontal or vertical resizable region selection
 
 ### 2. Layouts
-- `Figure` - a single plot or a grid of subplots 
+- `Figure` - a single plot or a grid of subplots
 
 ### 3. Widgets - high level widgets to make repetitive UIs easier
-- `ImageWidget`- widget for `Image` data with dims: `xy`, `txy`, `tzxy`
+- `ImageWidget`- widget for `ImageGraphic` data with dims: `xy`, `txy`, `tzxy`
 - Sliders, support window functions, etc.
 
 # Docs
