@@ -6,6 +6,8 @@ from pynapple import TsdFrame, TsdTensor
 from fastplotlib.graphics._features import FeatureEvent
 
 MARGIN: float = 1
+
+
 # TODO: need to make a method for automatic MARGIN setting based on the data
 
 
@@ -40,7 +42,7 @@ class TimeStoreComponent:
             if not isinstance(data, (TsdFrame, TsdTensor)):
                 raise ValueError("If passing in `ImageGraphic` must provide associated `TsdFrame` to update data with.")
             self._data = data
-        
+
         self._data_filter = data_filter
 
 
@@ -152,4 +154,3 @@ class TimeStore:
                 # only update if different
                 if abs(component.subscriber.value - self.time) > MARGIN:
                     component.subscriber.value = self.time
-                    
